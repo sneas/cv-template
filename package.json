@@ -6,8 +6,8 @@
     "prewatch": "npm run build",
     "watch": "chokidar '**/*' -i 'dest/**/*' -c 'npm run build'",
     "start": "npm run watch & live-server dest",
-    "pregh-pages": "npm run build",
-    "gh-pages": "gh-pages -d dest"
+    "pregh": "npm run build",
+    "gh": "gh-pages -d dest"
   },
   "repository": {
     "type": "git",

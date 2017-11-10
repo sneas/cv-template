@@ -17,6 +17,6 @@ The idea behind **The Curriculum Vitae Project** is to provide anyone a quick so
 3. Start local development server with `npm start`.
 4. Update contents of `src` folder to fit your needs.
 5. Commit your changes.
-6. Publish your updated CV on GitHub pages with `npm run gh-pages`.
+6. Publish your updated CV on GitHub pages with `npm run gh`.
 7. Open `http://your-username.github.io/your-cv-repo`
 8. Have a cookie 🍪
