@@ -110,9 +110,9 @@
         </p>
         <h2>Biography</h2>
         <dl class="row">
-            {{#each data.facts}}
-                <dt class="col-md-2">{{ label }}</dt>
-                <dd class="col-md-10">{{{ desc }}}</dd>
+            {{#each facts}}
+                <dt class="col-md-2">{{ @key }}</dt>
+                <dd class="col-md-10">{{{ this }}}</dd>
             {{/each}}
         </dl>
 
@@ -130,7 +130,7 @@
                 <h3>{{ title }}</h3>
                 <p class="text-muted">{{ written }}</p>
 
-                {{{ contents }}}
+                {{{markdown contents }}}
 
                 <div>
                     {{#each badges }}
@@ -151,7 +151,7 @@
                 <div class="card-body">
                     <div class="mb-2"><strong>{{ header }}</strong></div>
 
-                    {{{ contents }}}
+                    {{{markdown contents }}}
 
                     <div>
                         {{#each skills }}

@@ -1,45 +1,25 @@
-const Metalsmith = require('metalsmith');
-const markdown = require('metalsmith-markdown');
-const layouts = require('metalsmith-layouts');
-const metadata = require('metalsmith-metadata');
-const buildInfo = require('metalsmith-build-info');
-const collections = require('metalsmith-collections');
-const ignore = require('metalsmith-ignore');
-const assets = require('metalsmith-assets');
+const handlebars = require('handlebars');
+const fs = require('fs-extra');
 const buildPdf = require('./utils/pdf');
+const markdownHelper = require('./utils/helpers/markdown');
+const templateData = require('./metadata/metadata');
 
-Metalsmith(__dirname)
-    .source('partials')
-    .destination('../dest')
-    .use(metadata({
-      data: 'facts.yml'
-    }))
-    .use(buildInfo())
-    .use(collections({
-      plays: {
-        pattern: 'plays/**/*',
-        sortBy: 'published',
-        reverse: 'true'
-      },
-      experience: {
-        pattern: 'experience/**/*',
-        sortBy: 'weight',
-        reverse: true
-      }
-    }))
-    .use(markdown())
-    .use(layouts({
-      engine: 'handlebars',
-      directory: 'templates'
-    }))
-    .use(ignore([
-      'tragedy/**/*',
-      'projects/**/*'
-    ]))
-    .use(assets({
-      "source": "assets"
-    }))
-    .build(function(err, files) {
-      if (err) { throw err; }
-      buildPdf(__dirname + '/../dest/index.html', __dirname + '/../dest/william-shakespeare.national-poet.pdf')
-    });
+const srcDir = __dirname;
+const outputDir = __dirname + '/../dest';
+
+// Clear dest dir
+fs.emptyDirSync(outputDir);
+
+// Copy assets
+fs.copySync(srcDir + '/assets', outputDir);
+
+// Build HTML
+handlebars.registerHelper('markdown', markdownHelper);
+const source = fs.readFileSync(srcDir + '/templates/index.html', 'utf-8');
+const template = handlebars.compile(source);
+const html = template(templateData);
+fs.writeFileSync(outputDir + '/index.html', html);
+
+// Build PDF
+buildPdf(outputDir + '/index.html', outputDir + '/william-shakespeare.national-poet.pdf');
+

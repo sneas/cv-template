@@ -1,7 +1,0 @@
-facts:
-  - label: Residence
-    desc: London
-  - label: Homepage
-    desc: <a href="https://en.wikipedia.org/wiki/William_Shakespeare">https://en.wikipedia.org/wiki/William_Shakespeare</a>
-  - label: Email
-    desc: <a href="mailto:wil64@yahoo.com">wil64@yahoo.com</a>
