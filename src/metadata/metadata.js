@@ -1,4 +1,5 @@
 module.exports = {
+  updated: new Date(),
   facts: {
     'Residence': 'London',
     'Homepage': '<a href="https://en.wikipedia.org/wiki/William_Shakespeare">https://en.wikipedia.org/wiki/William_Shakespeare</a>',
