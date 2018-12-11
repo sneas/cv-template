@@ -1,0 +1,76 @@
+@media print {
+    body {
+        font-size: 20px;
+    }
+
+    .screen {
+        display: none;
+    }
+
+    .card {
+        border: none;
+    }
+
+    .card-body {
+        padding: 0;
+    }
+
+    .badge {
+        border: 0.07rem solid #868e96;
+    }
+
+    .badge-primary {
+        color: inherit;
+        background-color: inherit;
+    }
+}
+
+@media not print {
+    .print {
+        display: none;
+    }
+
+    .page {
+        background-color: #fff;
+        padding: 40px;
+    }
+
+    @media (min-width: 576px) {
+        .page {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.75);
+        }
+    }
+
+    h1, h2, h3, h4 {
+        font-weight: 300;
+    }
+
+    h2 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    dt {
+        font-weight: normal;
+    }
+
+    strong {
+        font-weight: 500;
+    }
+}
+
+a .fa {
+    text-decoration: none !important;
+    margin-right: 5px;
+}
+
+.badge {
+    font-weight: normal;
+    letter-spacing: 0.05rem;
+}
+
+.page {
+    position: relative;
+}
