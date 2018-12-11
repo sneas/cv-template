@@ -1,6 +1,7 @@
 module.exports = {
   updated: new Date(),
   pdfFileName: 'william-shakespeare.national-poet.pdf',
+  baseUrl: 'https://github.com/sneas/cv-project',
   facts: {
     'Residence': 'London',
     'Homepage': '<a href="https://en.wikipedia.org/wiki/William_Shakespeare">https://en.wikipedia.org/wiki/William_Shakespeare</a>',
