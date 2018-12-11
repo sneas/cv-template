@@ -41,5 +41,4 @@ buildPdf = async function(inputFile, outputFile) {
 };
 
 // Build PDF
-buildPdf(outputDir + '/index.html', outputDir + '/william-shakespeare.national-poet.pdf');
-
+buildPdf(`${outputDir}/index.html`, `${outputDir}/${templateData.pdfFileName}`);
