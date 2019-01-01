@@ -32,5 +32,8 @@
     "markdown": "^0.5.0",
     "puppeteer": "^1.9.0",
     "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "dayjs": "^1.7.8"
   }
 }

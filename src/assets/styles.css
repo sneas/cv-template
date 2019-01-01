@@ -1,6 +1,6 @@
 @media print {
     body {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .screen {
@@ -30,16 +30,13 @@
         display: none;
     }
 
-    .page {
-        background-color: #fff;
-        padding: 40px;
-    }
-
     @media (min-width: 576px) {
         .page {
             margin-top: 10px;
             margin-bottom: 10px;
             box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.75);
+            position: relative;
+            padding: 32px;
         }
     }
 
@@ -71,6 +68,14 @@ a .fa {
     letter-spacing: 0.05rem;
 }
 
-.page {
-    position: relative;
+@media print {
+    .col-print-1 {
+        flex: 0 0 8.333333%;
+        max-width: 8.333333%;
+    }
+
+    .col-print-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }

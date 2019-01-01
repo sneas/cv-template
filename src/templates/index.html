@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>William Shakespeare. Poet, playwright and actor. London</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -10,21 +11,26 @@
 </head>
 <body>
     <div class="container page">
-        <h1>William Shakespeare<br/>Poet, playwright and actor</h1>
-        <p>
-            <time datetime="{{ buildinfo.date }}" class="text-muted">Last update: {{ updated }}</time>
-        </p>
-        <p>
-            <span class="screen"><a href="{{ pdfFileName }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>Download PDF version</a></span>
-            <span class="print">The online version is available at <a href="{{ baseUrl }}"><i class="fa fa-github" aria-hidden="true"></i>{{ baseUrl }}</a></span>
-        </p>
-        <h2>Biography</h2>
-        <dl class="row">
-            {{#each facts}}
-                <dt class="col-md-2">{{ @key }}</dt>
-                <dd class="col-md-10">{{{ this }}}</dd>
-            {{/each}}
-        </dl>
+        <div class="row">
+            <div class="col-md-6 col-print-6">
+                <h1>William Shakespeare<br/>Poet, playwright and actor</h1>
+                <p>
+                    <time datetime="{{ buildinfo.date }}" class="text-muted">Last update: {{ updated }}</time>
+                </p>
+                <p>
+                    <span class="screen"><a href="{{ pdfFileName }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>Download PDF version</a></span>
+                    <span class="print">The online version is available at <a href="{{ baseUrl }}" class="text-nowrap"><i class="fa fa-github" aria-hidden="true"></i>{{ baseUrl }}</a></span>
+                </p>
+            </div>
+            <div class="col-md-6 col-print-6">
+                <dl class="row">
+                    {{#each facts}}
+                        <dt class="col-md-3">{{ @key }}</dt>
+                        <dd class="col-md-9">{{{ this }}}</dd>
+                    {{/each}}
+                </dl>
+            </div>
+        </div>
 
         <p>
             English poet, playwright and actor, widely regarded as the greatest writer in the English language
