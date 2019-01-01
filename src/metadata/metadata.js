@@ -2,8 +2,9 @@ const dayjs = require('dayjs');
 
 module.exports = {
   updated: dayjs().format('MMMM D, YYYY'),
-  pdfFileName: 'william-shakespeare.national-poet.pdf',
-  baseUrl: 'https://github.com/sneas/cv-project',
+  name: 'William Shakespeare',
+  title: 'Poet, playwright and actor',
+  baseUrl: 'https://sneas.github.io/cv-project',
   facts: {
     'Residence': 'London',
     'Homepage': `<a href="https://en.wikipedia.org/wiki/William_Shakespeare">

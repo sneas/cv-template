@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const markdownHelper = require('./utils/helpers/markdown');
 const templateData = require('./metadata/metadata');
 const Puppeteer = require('puppeteer');
+const getSlug = require('speakingurl');
 
 const srcDir = __dirname;
 const outputDir = __dirname + '/../dest';
@@ -17,7 +18,11 @@ fs.copySync(srcDir + '/assets', outputDir);
 handlebars.registerHelper('markdown', markdownHelper);
 const source = fs.readFileSync(srcDir + '/templates/index.html', 'utf-8');
 const template = handlebars.compile(source);
-const html = template(templateData);
+const pdfFileName = `${getSlug(templateData.name)}.${getSlug(templateData.title)}.pdf`;
+const html = template({
+    ...templateData,
+    pdfFileName,
+});
 fs.writeFileSync(outputDir + '/index.html', html);
 
 buildPdf = async function(inputFile, outputFile) {
@@ -41,4 +46,4 @@ buildPdf = async function(inputFile, outputFile) {
 };
 
 // Build PDF
-buildPdf(`${outputDir}/index.html`, `${outputDir}/${templateData.pdfFileName}`);
+buildPdf(`${outputDir}/index.html`, `${outputDir}/${pdfFileName}`);

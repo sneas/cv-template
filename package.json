@@ -34,6 +34,7 @@
     "watch": "^1.0.2"
   },
   "dependencies": {
-    "dayjs": "^1.7.8"
+    "dayjs": "^1.7.8",
+    "speakingurl": "^14.0.1"
   }
 }
