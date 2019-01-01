@@ -1,7 +1,4 @@
-const dayjs = require('dayjs');
-
 module.exports = {
-  updated: dayjs().format('MMMM D, YYYY'),
   name: 'William Shakespeare',
   title: 'Poet, playwright and actor',
   baseUrl: 'https://sneas.github.io/cv-project',

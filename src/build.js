@@ -4,6 +4,7 @@ const markdownHelper = require('./utils/helpers/markdown');
 const templateData = require('./metadata/metadata');
 const Puppeteer = require('puppeteer');
 const getSlug = require('speakingurl');
+const dayjs = require('dayjs');
 
 const srcDir = __dirname;
 const outputDir = __dirname + '/../dest';
@@ -22,6 +23,7 @@ const pdfFileName = `${getSlug(templateData.name)}.${getSlug(templateData.title)
 const html = template({
     ...templateData,
     pdfFileName,
+    updated: dayjs().format('MMMM D, YYYY'),
 });
 fs.writeFileSync(outputDir + '/index.html', html);
 
