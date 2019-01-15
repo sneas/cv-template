@@ -10,6 +10,20 @@ module.exports = {
                 </a>`,
     'Email': '<a href="mailto:wil64@yahoo.com">wil64@yahoo.com</a>'
   },
+  skills: [
+    ['Comedy', '++++'],
+    ['Love', '++++'],
+    ['Theater', '++++'],
+    ['Tragedy', '++++'],
+    ['Poetry', '++++'],
+    ['Erotic', '+++'],
+    ['Sonnets', '++++'],
+    ['Plays', '++++'],
+    ['Writing', '++++'],
+    ['Directing', '+++'],
+    ['Literature', '++++'],
+    ['Influence', '++++'],
+  ],
   plays: [
     {
       title: 'Hamlet',

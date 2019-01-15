@@ -32,6 +32,18 @@
             </div>
         </div>
 
+        <h3 class="screen">Skills</h3>
+        <div class="row mb-4">
+            {{#each skills}}
+            <div class="col-print-1 col-3 col-md-2 col-lg-1 text-right">
+                <small>{{ this.[0] }}</small>
+            </div>
+            <div class="col-print-1 col-3 col-md-2 col-lg-1">
+                {{ this.[1] }}
+            </div>
+            {{/each}}
+        </div>
+
         <p>
             English poet, playwright and actor, widely regarded as the greatest writer in the English language
             and the world's pre-eminent dramatist. Often called England's national poet and the "Bard of Avon".
