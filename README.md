@@ -10,16 +10,28 @@ GitHub Pages is probably the best place developer could store it's CV. Giving a 
 
 The idea behind **The Curriculum Vitae Project** is to provide anyone a quick solution for managing CV (both HTML and PDF versions) with GitHub.
 
+## Installation
+
+### One step way (if you don't mind forking)
+
+1. Fork this repo
+
+### Multi step way (for those who who doesn't want to fork)
+
+1. Create and clone a new repo
+1. `cd` into the repo's folder
+1. `npm install -g git-cp` (it's a nice tool to have)
+1. `git-cp git@github.com:sneas/cv-project.git` 
+
 ## Usage
 
-1. Fork this or create a new GitHub repo and copy all the files there.
-2. Install project dependencies with `npm install`
-3. Start local development server with `npm start`.
-4. Update contents of `src` folder to fit your needs. This item is explained [below](#update-contents).
-5. Commit your changes.
-6. Publish your updated CV on GitHub pages with `npm run gh`.
-7. Open `http://your-username.github.io/your-cv-repo`
-8. Have a cookie 🍪
+1. Install project dependencies with `npm install`
+1. Start local development server with `npm start`.
+1. Update contents of `src` folder to fit your needs. This item is explained [below](#update-contents).
+1. Commit your changes.
+1. Publish your updated CV on GitHub pages with `npm run gh`.
+1. Open `http://your-username.github.io/your-cv-repo`
+1. Have a cookie 🍪
 
 ### Update contents
 
