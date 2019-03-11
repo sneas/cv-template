@@ -21,8 +21,8 @@ The idea behind **The Curriculum Vitae Project** is to provide anyone a quick so
 ### Multi step way (for those who who doesn't want to fork)
 
 1. Create and clone a new repo
+1. `npm install -g git-cp`
 1. `cd` into the repo's folder
-1. `npm install -g git-cp` (it's a nice tool to have)
 1. `git-cp git@github.com:sneas/cv-project.git` 
 
 ## Usage
