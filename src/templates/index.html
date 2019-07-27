@@ -1,94 +1,95 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ name }}. {{ title }}</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container page">
-        <div class="row">
-            <div class="col-md-6 col-print-6">
-                <h1>{{ name }}<br/>{{ title }}</h1>
-                <p>
-                    <time datetime="{{ buildinfo.date }}" class="text-muted">Last update: {{ updated }}</time>
-                </p>
-                <p>
-                    <span class="screen"><a href="{{ pdfFileName }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>Download PDF version</a></span>
-                    <span class="print">The online version is available at <a href="{{ baseUrl }}" class="text-nowrap"><i class="fa fa-github" aria-hidden="true"></i>{{ baseUrl }}</a></span>
-                </p>
-            </div>
-            <div class="col-md-6 col-print-6">
-                <dl class="row">
-                    {{#each facts}}
-                        <dt class="col-md-3">{{ @key }}</dt>
-                        <dd class="col-md-9">{{{ this }}}</dd>
-                    {{/each}}
-                </dl>
-            </div>
+<div class="container page">
+    <div class="row">
+        <div class="col-md-6 col-print-6">
+            <h1>{{ name }}<br/>{{ title }}</h1>
+            <p>
+                <time datetime="{{ buildinfo.date }}" class="text-muted">Last update: {{ updated }}</time>
+            </p>
+            <p>
+                <span class="screen"><a href="{{ pdfFileName }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>Download PDF version</a></span>
+                <span class="print">The online version is available at <a href="{{ baseUrl }}" class="text-nowrap"><i
+                    class="fa fa-github" aria-hidden="true"></i>{{ baseUrl }}</a></span>
+            </p>
         </div>
-
-        <h3 class="screen">Skills</h3>
-        <div class="row mb-4">
-            {{#each skills}}
-            <div class="col-print-1 col-3 col-md-2 col-lg-1 text-right">
-                <small>{{ this.[0] }}</small>
-            </div>
-            <div class="col-print-1 col-3 col-md-2 col-lg-1">
-                {{ this.[1] }}
-            </div>
-            {{/each}}
+        <div class="col-md-6 col-print-6">
+            <dl class="row">
+                {{#each facts}}
+                <dt class="col-md-3">{{ @key }}</dt>
+                <dd class="col-md-9">{{{ this }}}</dd>
+                {{/each}}
+            </dl>
         </div>
+    </div>
 
-        <p>
-            English poet, playwright and actor, widely regarded as the greatest writer in the English language
-            and the world's pre-eminent dramatist. Often called England's national poet and the "Bard of Avon".
-            My extant work is including collaborations, consist of approximately 38 plays, 154 sonnets,
-            two long narrative poems and a few other verses, some of uncertain authorship.
-        </p>
-
-        <h2>Plays and work</h2>
-        {{#each plays}}
-        <div class="card mb-4">
-            <div class="card-body">
-                <h3>{{ title }}</h3>
-                <p class="text-muted">{{ written }}</p>
-
-                {{{markdown contents }}}
-
-                <div>
-                    {{#each badges }}
-                    <span class="badge badge-primary">{{ this }}</span>
-                    {{/each}}
-                </div>
-            </div>
+    <h3 class="screen">Skills</h3>
+    <div class="row mb-4">
+        {{#each skills}}
+        <div class="col-print-1 col-3 col-md-2 col-lg-1 text-right">
+            <small>{{ this.[0] }}</small>
         </div>
-        {{/each}}
-
-        <h2>Education</h2>
-        <p>King Edward VI Grammar School in Stratford-upon-Avon [1571 - 1578]</p>
-
-        <h2>Additional experience</h2>
-
-        {{#each experience}}
-            <div class="card mt-4">
-                <div class="card-body">
-                    <div class="mb-2"><strong>{{ header }}</strong></div>
-
-                    {{{markdown contents }}}
-
-                    <div>
-                        {{#each skills }}
-                        <span class="badge badge-primary">{{ this }}</span>
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
+        <div class="col-print-1 col-3 col-md-2 col-lg-1">
+            {{ this.[1] }}
+        </div>
         {{/each}}
     </div>
+
+    <p>
+        English poet, playwright and actor, widely regarded as the greatest writer in the English language
+        and the world's pre-eminent dramatist. Often called England's national poet and the "Bard of Avon".
+        My extant work is including collaborations, consist of approximately 38 plays, 154 sonnets,
+        two long narrative poems and a few other verses, some of uncertain authorship.
+    </p>
+
+    <h2>Plays and work</h2>
+    {{#each plays}}
+    <div class="card mb-4">
+        <div class="card-body">
+            <h3>{{ title }}</h3>
+            <p class="text-muted">{{ written }}</p>
+
+            {{{markdown contents }}}
+
+            <div>
+                {{#each badges }}
+                <span class="badge badge-primary">{{ this }}</span>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+    <h2>Education</h2>
+    <p>King Edward VI Grammar School in Stratford-upon-Avon [1571 - 1578]</p>
+
+    <h2>Additional experience</h2>
+
+    {{#each experience}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="mb-2"><strong>{{ header }}</strong></div>
+
+            {{{markdown contents }}}
+
+            <div>
+                {{#each skills }}
+                <span class="badge badge-primary">{{ this }}</span>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
 </body>
 </html>

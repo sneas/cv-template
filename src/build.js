@@ -21,13 +21,13 @@ const source = fs.readFileSync(srcDir + '/templates/index.html', 'utf-8');
 const template = handlebars.compile(source);
 const pdfFileName = `${getSlug(templateData.name)}.${getSlug(templateData.title)}.pdf`;
 const html = template({
-    ...templateData,
-    pdfFileName,
-    updated: dayjs().format('MMMM D, YYYY'),
+  ...templateData,
+  pdfFileName,
+  updated: dayjs().format('MMMM D, YYYY'),
 });
 fs.writeFileSync(outputDir + '/index.html', html);
 
-buildPdf = async function(inputFile, outputFile) {
+buildPdf = async function (inputFile, outputFile) {
   const browser = await Puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(`file://${inputFile}`, {

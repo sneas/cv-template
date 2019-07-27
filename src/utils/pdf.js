@@ -10,7 +10,7 @@ module.exports = function buildPdf(input, output) {
   };
 
   return new Promise((resolve, reject) => {
-    pdf.create(html, options).toFile(output, function(err) {
+    pdf.create(html, options).toFile(output, function (err) {
       if (err) {
         console.log(err);
         reject(err);
