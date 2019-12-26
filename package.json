@@ -27,7 +27,7 @@
     "chokidar-cli": "^1.2.1",
     "fs-extra": "^7.0.1",
     "gh-pages": "^2.0.1",
-    "handlebars": "^4.0.14",
+    "handlebars": "^4.3.0",
     "live-server": "^1.2.0",
     "markdown": "^0.5.0",
     "puppeteer": "^1.9.0",
