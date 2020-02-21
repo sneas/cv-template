@@ -5,9 +5,7 @@
     "build": "node src/build.js",
     "watch": "chokidar '**/*' -i 'dist/**/*' -c 'npm run build'",
     "prestart": "npm run build",
-    "start": "npm run watch & live-server dist",
-    "pregh": "npm run build",
-    "gh": "gh-pages -d dist"
+    "start": "npm run watch & live-server dist"
   },
   "repository": {
     "type": "git",
@@ -26,7 +24,6 @@
   "devDependencies": {
     "chokidar-cli": "^1.2.1",
     "fs-extra": "^7.0.1",
-    "gh-pages": "^2.0.1",
     "handlebars": "^4.3.0",
     "live-server": "^1.2.0",
     "markdown": "^0.5.0",

@@ -10,7 +10,7 @@ Real world example: [http://sneas.github.io/cv](http://sneas.github.io/cv).
 
 GitHub Pages is probably the best place developer could store it's CV. Giving a potential employer a link to your CV stored on GitHub shows your strong desire for automation and definitely stands you out.
 
-The idea behind **The Curriculum Vitae Project** is to provide anyone a quick solution for managing CV (both HTML and PDF versions) with GitHub.
+The idea behind **The Curriculum Vitae Project** is to provide anyone a quick solution for managing CV (both HTML and PDF versions) with GitHub and automate deployments with GitHub Actions.
 
 ## Installation
 
@@ -30,8 +30,8 @@ The idea behind **The Curriculum Vitae Project** is to provide anyone a quick so
 1. Install project dependencies with `npm install`
 1. Start local development server with `npm start`.
 1. Update contents of `src` folder to fit your needs. This item is explained [below](#update-contents).
-1. Commit your changes.
-1. Publish your updated CV on GitHub pages with `npm run gh`.
+1. Commit and push your changes.
+1. The CI automatically builds latest version and deploys it to GitHub Pages.
 1. Open `http://your-username.github.io/your-cv-repo`
 1. Have a cookie 🍪
 
