@@ -3,11 +3,11 @@
   "description": "The Curriculum Vitae Project",
   "scripts": {
     "build": "node src/build.js",
-    "watch": "chokidar '**/*' -i 'dest/**/*' -c 'npm run build'",
+    "watch": "chokidar '**/*' -i 'dist/**/*' -c 'npm run build'",
     "prestart": "npm run build",
-    "start": "npm run watch & live-server dest",
+    "start": "npm run watch & live-server dist",
     "pregh": "npm run build",
-    "gh": "gh-pages -d dest"
+    "gh": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",

@@ -7,9 +7,9 @@ const getSlug = require('speakingurl');
 const dayjs = require('dayjs');
 
 const srcDir = __dirname;
-const outputDir = __dirname + '/../dest';
+const outputDir = __dirname + '/../dist';
 
-// Clear dest dir
+// Clear dist dir
 fs.emptyDirSync(outputDir);
 
 // Copy assets
