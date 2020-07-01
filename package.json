@@ -1,6 +1,6 @@
 {
-  "name": "cv",
-  "description": "The Curriculum Vitae Project",
+  "name": "cv-template",
+  "description": "The Curriculum Vitae Template",
   "scripts": {
     "build": "node src/build.js",
     "watch": "chokidar '**/*' -i 'dist/**/*' -c 'npm run build'",
@@ -15,7 +15,7 @@
     "cv",
     "resume"
   ],
-  "author": "Dima Snisarenko <snisarenkodima@gmail.com>",
+  "author": "Dmytro Snisarenko <dmytro@sneas.io>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sneas/cv-project/issues"

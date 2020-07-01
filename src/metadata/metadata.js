@@ -1,7 +1,7 @@
 module.exports = {
   name: 'William Shakespeare',
   title: 'Poet, playwright and actor',
-  baseUrl: 'https://sneas.github.io/cv-project',
+  baseUrl: 'https://sneas.github.io/cv-template',
   facts: {
     'Residence': 'London',
     'Homepage': `<a href="https://en.wikipedia.org/wiki/William_Shakespeare">

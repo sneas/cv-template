@@ -1,8 +1,13 @@
-# The Curriculum Vitae Project
+# The Curriculum Vitae Template
 
-You are an amazing developer. Keep your CV on GitHub. Host it on GitHub pages. Have both HTML and PDF versions automatically generated and consistent. This is what good developers do.
+Manage your CV with GitHub.
 
-Demo: [http://sneas.github.io/cv-project](http://sneas.github.io/cv-project).
+## What does this project do?
+
+* Helps you to manage your CV as a web app (HTML + CSS +JS)
+* Automatically generates and publishes HTML and PDF version on every push to `master`
+
+Demo: [http://sneas.github.io/cv-template](http://sneas.github.io/cv-template).
 
 Real world example: [http://sneas.github.io/cv](http://sneas.github.io/cv).
 
@@ -10,20 +15,12 @@ Real world example: [http://sneas.github.io/cv](http://sneas.github.io/cv).
 
 GitHub Pages is probably the best place developer could store it's CV. Giving a potential employer a link to your CV stored on GitHub shows your strong desire for automation and definitely stands you out.
 
-The idea behind **The Curriculum Vitae Project** is to provide anyone a quick solution for managing CV (both HTML and PDF versions) with GitHub and automate deployments with GitHub Actions.
+The idea behind **The Curriculum Vitae Template** is to provide anyone a quick solution for creating and managing CV (both HTML and PDF versions) with the help of GitHub.
 
 ## Installation
 
-### One step way (if you don't mind forking)
-
-1. Fork this repo
-
-### Multi step way (for those who who doesn't want to fork)
-
-1. Create and clone a new repo
-1. `npm install -g git-cp`
-1. `cd` into the repo's folder
-1. `git-cp git@github.com:sneas/cv-project.git` 
+1. Create a new repo out of this template by clicking [this link](https://github.com/sneas/cv-template/generate)
+1. Clone the newly created repo
 
 ## Usage
 
@@ -31,9 +28,8 @@ The idea behind **The Curriculum Vitae Project** is to provide anyone a quick so
 1. Start local development server with `npm start`.
 1. Update contents of `src` folder to fit your needs. This item is explained [below](#update-contents).
 1. Commit and push your changes.
-1. The CI automatically builds latest version and deploys it to GitHub Pages.
+1. GitHub Actions will automatically build the latest version and deploy it to GitHub Pages.
 1. Open `http://your-username.github.io/your-cv-repo`
-1. Have a cookie 🍪
 
 ### Update contents
 
