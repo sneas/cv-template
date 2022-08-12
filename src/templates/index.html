@@ -5,88 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ name }}. {{ title }}</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <base target="_blank">
 </head>
 <body>
 <div class="container page">
-    <div class="row">
-        <div class="col-md-6 col-print-6">
-            <h1>{{ name }}<br/>{{ title }}</h1>
-            <p>
-                <time datetime="{{ buildinfo.date }}" class="text-muted">Last update: {{ updated }}</time>
-            </p>
-            <p>
-                <span class="screen"><a href="{{ pdfFileName }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>Download PDF version</a></span>
-                <span class="print">The online version is available at <a href="{{ baseUrl }}" class="text-nowrap"><i
-                    class="fa fa-github" aria-hidden="true"></i>{{ baseUrl }}</a></span>
-            </p>
-        </div>
-        <div class="col-md-6 col-print-6">
-            <dl class="row">
-                {{#each facts}}
-                <dt class="col-md-3">{{ @key }}</dt>
-                <dd class="col-md-9">{{{ this }}}</dd>
-                {{/each}}
-            </dl>
+    <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
+        <div class="row">
+            <div class="col-print-6 col-12 col-md-4 d-flex justify-content-between flex-column">
+                <div>
+                    <h1 class="mb-0">{{ name }}</h1>
+                    <div class="fs-3">{{ title }}</div>
+                </div>
+                <div>
+                    <p>
+                        <time datetime="{{ buildinfo.date }}" class="small">Last update: {{ updated }}</time>
+                    </p>
+                    <p>
+                        <span class="screen"><a href="{{ pdfFileName }}"><i class="far fa-file-pdf"></i>Download PDF version</a></span>
+                        <span class="print">Up-to-date version of CV is available at <a href="{{ baseUrl }}"
+                                                                                        class="text-nowrap"><i
+                            class="fab fa-github" aria-hidden="true"></i>{{ baseUrl }}</a></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 offset-lg-1 d-none d-md-block align-self-center">
+                <img src="photo.jpg" class="rounded-circle img-fluid" alt="Personal photo">
+            </div>
+            <div class="col-print-6 col-12 offset-md-1 col-md-4">
+                <ul class="list-group list-group-flush">
+                    {{#each facts}}
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <span class="text-nowrap">{{ @key }}</span>
+                        <span class="text-nowrap">{{{ this }}}</span>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
         </div>
     </div>
 
-    <h3 class="screen">Skills</h3>
-    <div class="row mb-4">
-        {{#each skills}}
-        <div class="col-print-1 col-3 col-md-2 col-lg-1 text-right">
-            <small>{{ this.[0] }}</small>
+    <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
+        <h3 class="h2 screen mb-4">Skills</h3>
+        <div class="row align-items-center">
+            {{#each skills}}
+            <div class="col-print-1 col-3 col-md-2 col-lg-1 text-right">
+                <small>{{ this.[0] }}</small>
+            </div>
+            <div class="col-print-1 col-3 col-md-2 col-lg-1">
+                <div class="skills">
+                    <div class="skills-bar" style="width: {{ this.[1] }}%"></div>
+                </div>
+            </div>
+            {{/each}}
         </div>
-        <div class="col-print-1 col-3 col-md-2 col-lg-1">
-            {{ this.[1] }}
-        </div>
-        {{/each}}
     </div>
 
-    <p>
+    <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
         English poet, playwright and actor, widely regarded as the greatest writer in the English language
         and the world's pre-eminent dramatist. Often called England's national poet and the "Bard of Avon".
         My extant work is including collaborations, consist of approximately 38 plays, 154 sonnets,
         two long narrative poems and a few other verses, some of uncertain authorship.
-    </p>
+    </div>
 
-    <h2>Professional Experience</h2>
-    {{#each plays}}
-    <div class="card mb-4">
-        <div class="card-body">
-            <h3>{{ title }}</h3>
-            <p class="text-muted">{{ written }}</p>
+    <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
+        <h2 class="mb-4">Professional Experience</h2>
+        {{#each positions}}
+        <div class="row d-block d-md-flex{{#unless @last}} mb-5{{/unless}}">
+            <div class="col-md-2 pt-1">
+                {{ period }}
+            </div>
+            <div class="col-md-10">
+                <h3 class="fs-4 fw-normal">{{ title }}</h3>
 
-            {{{markdown contents }}}
+                <div>{{{markdown contents }}}</div>
 
-            <div>
-                {{#each badges }}
-                <span class="badge badge-primary">{{ this }}</span>
-                {{/each}}
+                <p>
+                    {{#each skills }}
+                    <span class="badge bg-secondary">{{ this }}</span>
+                    {{/each}}
+                </p>
             </div>
         </div>
+        {{/each}}
     </div>
-    {{/each}}
 
-    <h2>Education</h2>
-    <p>King Edward VI Grammar School in Stratford-upon-Avon [1571 - 1578]</p>
+    <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
+        <h2 class="mb-4">Education</h2>
+        <div>King Edward VI Grammar School in Stratford-upon-Avon [1571 - 1578]</div>
+    </div>
 
-    <h2>Additional Experience</h2>
+    <h2 class="mb-4">Additional Experience</h2>
 
     {{#each experience}}
-    <div class="card mt-4">
-        <div class="card-body">
-            <div class="mb-2"><strong>{{ header }}</strong></div>
+    <div class="mb-4">
+        <h3 class="fs-4 fw-normal">{{ header }}</h3>
 
-            {{{markdown contents }}}
+        {{{markdown contents }}}
 
-            <div>
-                {{#each skills }}
-                <span class="badge badge-primary">{{ this }}</span>
-                {{/each}}
-            </div>
+        <div>
+            {{#each skills }}
+            <span class="badge bg-secondary">{{ this }}</span>
+            {{/each}}
         </div>
     </div>
     {{/each}}
