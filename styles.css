@@ -1,6 +1,35 @@
+:root {
+    --bs-font-sans-serif: Roboto, sans-serif;
+    --bs-body-font-weight: 400;
+    --bs-body-color: #858585;
+    --light-color: #D9D9D9;
+    --bs-body-font-size: 1.2rem;
+}
+
+a {
+    word-break: break-word;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    color: #000000;
+}
+
 @media print {
+    :root {
+        --bs-body-color: #000;
+    }
+
     body {
-        font-size: 19px;
+        font-size: 0.7rem;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .page {
+        min-width: 100%;
     }
 
     .screen {
@@ -17,31 +46,28 @@
 
     .badge {
         border: 0.07rem solid #868e96;
-    }
-
-    .badge-primary {
         color: inherit;
         background-color: inherit;
+    }
+
+    .print-url {
+        color: #deeef9;
+        text-decoration: none;
+        font-size: smaller;
+    }
+
+    .text-print-right {
+        text-align: right;
     }
 }
 
 @media not print {
+    .page {
+        padding: 2rem;
+    }
+
     .print {
         display: none;
-    }
-
-    @media (min-width: 576px) {
-        .page {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.75);
-            position: relative;
-            padding: 32px;
-        }
-    }
-
-    h1, h2, h3, h4 {
-        font-weight: 300;
     }
 
     h2 {
@@ -58,7 +84,10 @@
     }
 }
 
-a .fa {
+.far,
+.fab,
+.fas,
+.fa {
     text-decoration: none !important;
     margin-right: 5px;
 }
@@ -74,58 +103,56 @@ a .fa {
         max-width: 8.333333%;
     }
 
-    .col-print-2 {
-        flex: 0 0 16.666667%;
-        max-width: 16.666667%;
-    }
-
-    .col-print-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-
-    .col-print-4 {
-        flex: 0 0 33.333333%;
-        max-width: 33.333333%;
-    }
-
-    .col-print-5 {
-        flex: 0 0 41.666667%;
-        max-width: 41.666667%;
-    }
-
     .col-print-6 {
         flex: 0 0 50%;
         max-width: 50%;
     }
 
-    .col-print-7 {
-        flex: 0 0 58.333333%;
-        max-width: 58.333333%;
+    .border-print-0 {
+        border-width: 0 !important;
     }
 
-    .col-print-8 {
-        flex: 0 0 66.666667%;
-        max-width: 66.666667%;
+    .pb-print-0 {
+        padding-bottom: 0 !important;
     }
 
-    .col-print-9 {
-        flex: 0 0 75%;
-        max-width: 75%;
+    .mb-print-1 {
+        margin-bottom: 1rem !important;
     }
+}
 
-    .col-print-10 {
-        flex: 0 0 83.333333%;
-        max-width: 83.333333%;
-    }
+.fact-icon {
+    width: 1em;
+    color: var(--light-color);
+    margin-right: 0.5rem;
+}
 
-    .col-print-11 {
-        flex: 0 0 91.666667%;
-        max-width: 91.666667%;
-    }
+@page {
+    size: auto;
+    margin: 10mm;
+}
 
-    .col-print-12 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+.skills {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.skills::after {
+    display: block;
+    content: '••••';
+    color: var(--light-color);
+}
+
+.skills-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.skills-bar::after {
+    display: block;
+    content: '••••';
+    color: var(--bs-primary);
 }
