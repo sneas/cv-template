@@ -5,7 +5,7 @@ You are a fantastic developer. Keep your CV on GitHub. Host it on GitHub Pages. 
 ## What does this project do?
 
 * Helps you to manage your CV as a web app (HTML + CSS + JS).
-* Automatically generates and publishes HTML and PDF version on every push to `master`.
+* Automatically generates and publishes HTML and PDF version on every push to `main`.
 
 Demo: [http://sneas.github.io/cv-template](http://sneas.github.io/cv-template).
 
@@ -22,7 +22,7 @@ The idea behind **The Curriculum Vitae Template** is to provide anyone with a qu
 1. Create a new repo out of this template by clicking [this link](https://github.com/sneas/cv-template/generate).
 1. Clone the newly created repo.
 1. Install project dependencies with `npm install`.
-1. Run `npm run deploy` to initialize `gh-pages`. This is a one time action. Further deployments will be initiated by GitHub Actions on every push to `master`.
+1. Run `npm run deploy` to initialize `gh-pages`. This is a one time action. Further deployments will be initiated by GitHub Actions on every push to `main`.
 
 ## Usage
 
