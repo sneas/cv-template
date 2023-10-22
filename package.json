@@ -27,6 +27,7 @@
     "chokidar-cli": "^3.0.0",
     "dayjs": "^1.11.4",
     "fs-extra": "^10.1.0",
+    "gh-pages": "^6.0.0",
     "git-repo-name": "^1.0.1",
     "git-username": "^1.0.0",
     "handlebars": "^4.7.7",
