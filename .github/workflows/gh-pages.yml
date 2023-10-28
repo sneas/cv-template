@@ -7,16 +7,16 @@ permissions:
   contents: write
 jobs:
   build-and-deploy:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '18.x'
-    - run: npm install
-    - run: npm run build
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v4
-      with:
-        folder: dist
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - run: npm install
+      - run: npm run build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          folder: dist
